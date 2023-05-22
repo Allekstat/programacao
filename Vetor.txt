@@ -1,4 +1,5 @@
 Algoritmo Modificar um Vetor Inteiro - Alexsander;
+
 Declaração:
       Lista[10] : Inteiro;
       Indice    : Inteiro;
