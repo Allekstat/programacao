@@ -1,6 +1,6 @@
 Algoritmo Modificar um Vetor Inteiro - Alexsander;
 
-DECLARAÇÃO:
+DECLARAÇÃO :
 	lista[10] : INTEIRO;
 	indice    : INTEIRO;
 	x         : INTEIRO;
