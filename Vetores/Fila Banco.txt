@@ -24,18 +24,25 @@ INICIO
 		SE (fila[i] = "pref") ENTÃO
 		
 			// mover todas as pessoas da fila uma posição anterior (2º vai para 3º, 1º vai para 2º, etc)
+			// porem faz isso a partir do ultimo (penultimo)
 			PARA j <- i DE ATÉ prio PASSO -1 FAÇA
 			
-				// se todos as posições a partir do [prio] forem deslocadas, entao agora sim o "pref" fica em primeiro
+				// se todos as posições a partir do [prio] forem deslocadas
+				// entao agora sim o "pref" fica em primeiro
 				SE (j = prio) ENTÃO
 				
-					// ao inves de colocar direto em fila[0], eu coloco os "pref"s na ordem que eles ja estavam entre si
+					// mesmo a primeira posição podendo estar vazia durante a primeira iteração
+					// ao inves de colocar direto em fila[0]
+					// eu coloco os "pref"s na ordem que eles ja estavam entre si
+					// (o segundo "pref" nao fica na frente do primeiro "pref")
 					fila[j] = "pref";
 				SENÃO
 					// isso desloca todos para a direita (1º para 2º, etc)
 					fila[j] <- fila[j - 1];
 				FIM-SE
 			FIM-PARA
+			
+			// quantidade de pessoas prioritarias na fila (ate agora)
 			prio <- prio + 1;
 		SENÃO
 		FIM-SE
