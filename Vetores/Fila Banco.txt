@@ -1,30 +1,42 @@
 Algoritmo : Fila de Banco - Alexsander;
 
+	DECLARAÇÃO :
+		fila[10]	: TEXTO;
+		i		: INTEIRO;
+		j		: INTEIRO;
+		prio		: INTEIRO;
+		
 INICIO
 
+	// pessoas na fila
+	fila[0] <- "reg";
+	fila[1] <- "reg";
+	fila[2] <- "reg";
+	fila[3] <- "pref";
+	fila[4] <- "reg";
+	fila[5] <- "pref";
+	fila[6] <- "pref";
 	
-		
-		
-	fila[0] <- "regular";
-	fila[1] <- "regular";
-	fila[2] <- "regular";
-	fila[3] <- "prioritario";
-	fila[4] <- "regular";
-	fila[5] <- "prioritario";
-	fila[6] <- "prioritario";
-	
-	prioritarios <- 0;
+	// quantidade de pessoas prioritarias (encontradas ate agora)
+	prio <- 0;
 	
 	PARA i <- 0 DE ATÉ 9 PASSO 1 FAÇA
-		SE (lista[i] = "prioritario") ENTÃO
-			PARA j <- i DE ATÉ prioritarios PASSO -1 FAÇA
-				SE (j = prioritarios) ENTÃO
-					fila[j] = "prioritario";
+		SE (fila[i] = "pref") ENTÃO
+		
+			// mover todas as pessoas da fila uma posição anterior (2º vai para 3º, 1º vai para 2º, etc)
+			PARA j <- i DE ATÉ prio PASSO -1 FAÇA
+			
+				// se todos as posições a partir do [prio] forem deslocadas, entao agora sim o "pref" fica em primeiro
+				SE (j = prio) ENTÃO
+				
+					// ao inves de colocar direto em fila[0], eu coloco os "pref"s na ordem que eles ja estavam entre si
+					fila[j] = "pref";
 				SENÃO
+					// isso desloca todos para a direita (1º para 2º, etc)
 					fila[j] <- fila[j - 1];
 				FIM-SE
 			FIM-PARA
-			prioritarios <- prioritarios + 1;
+			prio <- prio + 1;
 		SENÃO
 		FIM-SE
 	FIM-PARA
