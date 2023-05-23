@@ -9,7 +9,7 @@ INICIO
 
 	x <- 1;
 	PARA indice <- 0 DE ATÉ 9 PASSO 1 FAÇA
-		lista[indice] <- X;
+		lista[indice] <- x;
 	FIM-PARA
 
 FIM
