@@ -5,7 +5,7 @@ DECLARAÇÃO :
 	i        : INTEIRO;
 	j        : INTEIRO;
 	prio     : INTEIRO;
-		
+	
 INICIO
 
 	// pessoas na fila
