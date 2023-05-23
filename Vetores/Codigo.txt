@@ -1,12 +1,14 @@
 Algoritmo Modificar um Vetor Inteiro - Alexsander;
 
-DECLARAÇÃO :
-	lista[10] : INTEIRO;
-	indice    : INTEIRO;
-	x         : INTEIRO;
+
 
 INICIO
 
+	DECLARAÇÃO :
+		lista[10] : INTEIRO;
+		indice    : INTEIRO;
+		x         : INTEIRO;
+	
 	x <- 1;
 	PARA indice <- 0 DE ATÉ 9 PASSO 1 FAÇA
 		lista[indice] <- x;
