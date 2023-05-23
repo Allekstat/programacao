@@ -2,16 +2,31 @@ Algoritmo : Fila de Banco - Alexsander;
 
 INICIO
 
-	DECLARAÇÃO :
-		lista[10] : INTEIRO;
-		indice    : INTEIRO;
-		x         : INTEIRO;
-
-
-	x <- 1;
-
-	PARA indice <- 0 DE ATÉ 9 PASSO 1 FAÇA
-		lista[indice] <- x;
+	
+		
+		
+	fila[0] <- "regular";
+	fila[1] <- "regular";
+	fila[2] <- "regular";
+	fila[3] <- "prioritario";
+	fila[4] <- "regular";
+	fila[5] <- "prioritario";
+	fila[6] <- "prioritario";
+	
+	prioritarios <- 0;
+	
+	PARA i <- 0 DE ATÉ 9 PASSO 1 FAÇA
+		SE (lista[i] = "prioritario") ENTÃO
+			PARA j <- i DE ATÉ prioritarios PASSO -1 FAÇA
+				SE (j = prioritarios) ENTÃO
+					fila[j] = "prioritario";
+				SENÃO
+					fila[j] <- fila[j - 1];
+				FIM-SE
+			FIM-PARA
+			prioritarios <- prioritarios + 1;
+		SENÃO
+		FIM-SE
 	FIM-PARA
-
+	
 FIM
