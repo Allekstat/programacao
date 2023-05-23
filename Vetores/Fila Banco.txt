@@ -1,10 +1,10 @@
 Algoritmo : Fila de Banco - Alexsander;
 
 	DECLARAÇÃO :
-		fila[10]	: TEXTO;
-		i		: INTEIRO;
-		j		: INTEIRO;
-		prio		: INTEIRO;
+		fila[10] : TEXTO;
+		i        : INTEIRO;
+		j        : INTEIRO;
+		prio     : INTEIRO;
 		
 INICIO
 
