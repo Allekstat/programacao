@@ -6,11 +6,11 @@ body {
 	height: -webkit-fill-available;
 }
 header, footer {
+	background-color: #8;
+}
+ul {
 	display: flex;
 	justify-content: space-evenly;
 	
-	background-color: #1145de;
-}
-ul {	
 	list-style-type: none;
 }
