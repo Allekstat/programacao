@@ -7,7 +7,7 @@ body {
 	flex-direction: column;
 	
 	font-family: Arial;
-	font-size: 3vh;
+	font-size: 1.5vw;
 }
 header { background-color: rgb(255, 191, 191); }
 article { background-color: rgb(191, 255, 191); flex-grow: 1; }
