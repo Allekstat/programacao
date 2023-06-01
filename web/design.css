@@ -4,9 +4,17 @@ html {
 body {
 	margin: 0;
 	height: -webkit-fill-available;
+	
+	display: flex;
 }
-header, footer {
-	background-color: rgb(191,191,191);
+header {
+	background-color: rgb(255, 191, 191);
+}
+article {
+	background-color: rgb(191, 255, 191);
+}
+footer {
+	background-color: rgb(191, 191, 255);
 }
 ul {
 	display: flex;
