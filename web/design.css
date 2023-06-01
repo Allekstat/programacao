@@ -4,6 +4,7 @@ html {
 body {
 	height: -webkit-fill-available;
 }
-footer {
-	bottom: 0%;
+header, footer {
+	display: flex;
+	justify-content: space-evenly;
 }
