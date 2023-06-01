@@ -1,21 +1,13 @@
-html {
-	height: 100%;
-}
+/* html { height: 100%; } */
 body {
+	min-height: 100vh;
 	margin: 0;
-	height: -webkit-fill-available;
 	
 	display: flex;
 }
-header {
-	background-color: rgb(255, 191, 191);
-}
-article {
-	background-color: rgb(191, 255, 191);
-}
-footer {
-	background-color: rgb(191, 191, 255);
-}
+header { background-color: rgb(255, 191, 191); }
+article { background-color: rgb(191, 255, 191); }
+footer { background-color: rgb(191, 191, 255); }
 ul {
 	display: flex;
 	justify-content: space-evenly;
