@@ -6,7 +6,7 @@ body {
 	height: -webkit-fill-available;
 }
 header, footer {
-	background-color: rgb(63,63,63);
+	background-color: rgb(191,191,191);
 }
 ul {
 	display: flex;
