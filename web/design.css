@@ -6,7 +6,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	
-	font-family: Verdana;
+	font-family: Arial;
 }
 header { background-color: rgb(255, 191, 191); }
 article { background-color: rgb(191, 255, 191); flex-grow: 1; }
