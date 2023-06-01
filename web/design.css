@@ -4,3 +4,6 @@ html {
 body {
 	height: -webkit-fill-available;
 }
+footer {
+	bottom: 0%;
+}
