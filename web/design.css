@@ -7,4 +7,5 @@ body {
 header, footer {
 	display: flex;
 	justify-content: space-evenly;
+	list-style-type: none;
 }
