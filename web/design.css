@@ -2,6 +2,5 @@ html {
 	height: 100%;
 }
 body {
-/* 	height: -webkit-fill-available; */
-	height: 100%;
+	height: -webkit-fill-available;
 }
