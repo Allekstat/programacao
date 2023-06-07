@@ -1,0 +1,79 @@
+ALGORITMO SOMA
+Alexsander;
+
+DECLARAÇÃO   :
+	NOME     : TEXTO;
+	VALOR1   : DECIMAL;
+	VALOR2   : DECIMAL;
+	OPERAÇÃO : TEXTO;
+	TOTAL    : DECIMAL;
+	TERMINAR : TEXTO;
+	LOOP     : TEXTO;
+	ERRO     : TEXTO;
+	
+INÍCIO
+
+	LOOP <- "s";
+
+	ENQUANTO (LOOP = "s") FAÇA
+	
+		ERRO <- "n";
+		
+		escreva("DIgite seu nome");
+		leia(NOME);
+		
+		escreva("Digite o Primeiro Número");
+		leia(VALOR1);
+		
+		escreva("Digite o Segundo Número");
+		leia(VALOR2);
+		
+		escreva("Escolha o Sinal da Operação (+, -, * ou /)");
+		leia(OPERAÇÃO);
+		
+		SE (OPERAÇÃO = "+") ENTÃO
+			TOTAL <- VALOR1 + VALOR2;
+			
+		SENÃO
+			SE (OPERAÇÃO = "-") ENTÃO
+				TOTAL <- VALOR1 - VALOR2;
+				
+			SENÃO
+				SE (OPERAÇÃO = "*") ENTÃO
+					TOTAL <- VALOR1 * VALOR2;
+			
+				SENÃO
+					SE (OPERAÇÃO = "/") ENTÃO
+						SE (VALOR2 = 0) ENTÃO
+							escreva("Não é Possível Dividir Por Zero");
+							ERRO <- "s";
+							
+						SENÃO
+							TOTAL <- VALOR1 / VALOR2;
+						
+						FIM-SE
+					SENÃO
+						escreva("Operação Inválida");
+						ERRO <- "s";
+						
+					FIM-SE
+				FIM-SE
+			FIM-SE
+		FIM-SE
+		
+		SE (ERRO = "n") ENTÃO
+			escreva("O Total é:", TOTAL);
+		SENÃO
+		FIM-SE
+		
+		escreva("Digite 'sair' para Sair");
+		leia(TERMINAR);
+		
+		SE (TERMINAR = "sair") ENTÃO
+			LOOP <- "n";
+		SENÃO
+		FIM-SE
+		
+	FIM-ENQUANTO
+	
+FIM

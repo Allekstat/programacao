@@ -1,0 +1,40 @@
+ALGORITMO LOGIN - 24.4
+
+DECLARAÇÃO :
+	NOME   : TEXTO;
+	SENHA  : TEXTO;
+	CHECK  : INTEIRO;
+	
+INICIO
+
+	CHECK <- 0;
+	
+	escreva("Digite seu Nome de Usuário:");
+	leia(NOME);
+	
+	escreva("Digite a Senha:");
+	leia(SENHA);
+	
+	SE(NOME = "Alexsander") ENTÃO
+		CHECK <- CHECK + 1;
+	SENÃO
+		CHECK <- CHECK - 1;
+	FIM-SE
+	
+	SE(SENHA = "123456") ENTÃO
+		CHECK <- CHECK + 10;
+	SENÃO
+		CHECK <- CHECK - 10;
+	FIM-SE
+	
+	SE(CHECK = 11) ENTÃO
+		escreva("Logado com Sucesso.");
+	SENÃO
+		SE(CHECK = 1) ENTÃO
+			escreva("Senha incorreta.");
+		SENÃO
+			escreva("Login Incorreto.");
+		FIM-SE
+	FIM-SE
+
+FIM
