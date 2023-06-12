@@ -1,6 +1,9 @@
 #include <stdio.h>
-#include <string.h>
-int main(int argc, char argv[]) {
-	char string[] = "";
+int main(int arguments_count, char* arguments_array[]) {
+	int i;
+	for(i = 0; i < 256; i++) {
+		char ascii = i;
+		printf("char[%i]  = \"%c\";\n", i, ascii);
+	}
 	return 0;
 }
