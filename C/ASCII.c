@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* comandos[] = {"sair", "help", "listar"};
+char* comandos[3] = {"sair", "help", "listar"};
 
-char* descricoes[] = {
+char* descricoes[3] = {
 	"Finaliza o programa.",
-	"Exibe todos os comandos disponíveis.",
+	"Exibe todos os comandos disponiveis.",
 	"Lista todos os caracteres ASCII de 0 a 255."
 };
 
 int comando_existe(char* comando) {
 	int i;
-	for(i = 0; i < sizeof(comandos); i++) {
+	for(i = 0; i < sizeof(comandos) / 8; i++) {
 		if(strcmp(comandos[i], comando) == 0) {
-			if(i < 1) {
-				return i - 1;
+			if(i == 0) {
+				return -1;
 			} else {
 				return i;
 			}
@@ -39,35 +39,52 @@ int comando_existe(char* comando) {
 // }
 
 void comando_funcao(int codigo) {
-	int i;
-	switch(codigo) {
-		case -1:
-			exit();
-			break;
-		case 1:
-			for(i = 0; i < sizeof(comandos); i++) {
-				printf(" < %s", comandos[i]);
-				printf(" \t\t\t %s", descricoes[i]);
-			}
-			break;
-		case 2:
-			for(i = 0; i < 256; i++) {
-				char ascii = i;
-				printf(" < char[%i]  = \"%c\";\n", i, ascii);
-			}
-			break;
-		default:;
+	if(codigo == -1) {//sair
+		exit(0);
+	} else if(codigo == 1) {//help
+		int i;
+		for(i = 0; i < sizeof(comandos) / 8; i++) {
+			printf("%s", comandos[i]);
+			printf("\t%s\n", descricoes[i]);
+		}
+	} else if(codigo == 2) {//listar
+		int i;
+		for(i = 32; i < 256; i++) {
+			printf("\tchar[%i]  = \"%c\";\n", i, (char) i);
+		}
 	}
+	/*switch(codigo) {
+		case -1://sair
+			
+			break;
+		case 1://help
+			//printf(" comandos[0] = %s", comandos[0]);
+			//printf(" descricoes[0] = %s", descricoes[0]);
+			for(i = 0; i < sizeof(comandos) / 8; i++) {
+				printf("%s", comandos[i]);
+				printf("\t%s\n", descricoes[i]);
+			}
+			break;
+		case 2://listar
+			printf(" < ");
+			for(i = 32; i < 256; i++) {
+				char ascii = i;
+				printf("\tchar[%i]  = \"%c\";\n", i, ascii);
+			}
+			break;
+		default:
+			break;
+	}*/
 }
-int main(int arguments_count, char* arguments_array[]) {
+main(int arguments_count, char* arguments_array[]) {
 	if(arguments_count > 1) {
 		comando_funcao(comando_existe(arguments_array[1]));
 	} else {
-		char input[16];
+		char* input;
+		input = "none";
 		while(comando_existe(input) != -1) {
 			printf(" > "); scanf("%s", &input);
 			comando_funcao(comando_existe(input));
 		}
 	}
-	return 0;
 }
