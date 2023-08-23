@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang='pt-br'>
 	<head>
+		<title>Horários</title>
 		<meta charset='utf-8'>
 		<meta name='viewport'content='width=device-width,initial-scale=1'>
-		<title>Horários</title>
+        <style>
+            table {
+                border-collapse:collapse;
+            }
+            td {
+                border:1px solid black;
+                padding:1px 8px;
+            }
+        </style>
 	</head>
 	<body>
 		<table>
-			<tr>
-				<tc>a</tc>
-				<tc>b</tc>
-				<tc>c</tc>
+            <caption>Horário de Laboratório Tarde</caption>
+            <thead>
+                <th></th>
+                <th>Data</th>
+                <th>LAB 01</th>
+                <th>LAB 02</th>
+                <th>LAB 03</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aula 1</td>
+                    <td rowspan='2'>01/abr</td>
+                    <td>JEFERSOM</td>
+                    <td>RODOLFO</td>
+                    <td>PAULO</td>
+                </tr>
+                <tr>
+                    <td>Aula 2</td>
+                    <td rowspan='2'>01/abr</td>
+                    <td>JEFERSOM</td>
+                    <td>RODOLFO</td>
+                    <td>PAULO</td>
 			</tr>
+            </tbody>
+			<tfoot></tfoot>
 		</table>
 	</body>
 </html>
