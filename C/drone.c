@@ -1,42 +1,26 @@
 
+#define u8bit unsigned char
+
 // Definir pinos de entrada e saída
 
-int MOTOR_NO = 0;
-int MOTOR_NE = 1;
-int MOTOR_SO = 2;
-int MOTOR_SE = 3;
+u8bit MOTOR_NO = 0;
+u8bit MOTOR_NE = 1;
+u8bit MOTOR_SO = 2;
+u8bit MOTOR_SE = 3;
 
 // Hélices = +, -, -, + (+hor, -ant)
 
-int BOTAO_W = 4; // Frente
-int BOTAO_A = 5; // Esquerda
-int BOTAO_S = 6; // Trás 
-int BOTAO_D = 7; // Direita
+u8bit BOTAO_W = 4; // Frente
+u8bit BOTAO_A = 5; // Esquerda
+u8bit BOTAO_S = 6; // Trás 
+u8bit BOTAO_D = 7; // Direita
 
-int BOTAO_I =  8; // Cima
-int BOTAO_J =  9; // Anti-Horário
-int BOTAO_K = 10; // Baixo
-int BOTAO_L = 11; // Horário
+u8bit BOTAO_I =  8; // Cima
+u8bit BOTAO_J =  9; // Anti-Horário
+u8bit BOTAO_K = 10; // Baixo
+u8bit BOTAO_L = 11; // Horário
 
-void setup(void)
-{
-  pinMode(MOTOR_NO, OUTPUT);
-  pinMode(MOTOR_NE, OUTPUT);
-  pinMode(MOTOR_SO, OUTPUT);
-  pinMode(MOTOR_SE, OUTPUT);
-
-  pinMode(BOTAO_W, INPUT);
-  pinMode(BOTAO_A, INPUT);
-  pinMode(BOTAO_S, INPUT);
-  pinMode(BOTAO_D, INPUT);
-
-  pinMode(BOTAO_I, INPUT);
-  pinMode(BOTAO_J, INPUT);
-  pinMode(BOTAO_K, INPUT);
-  pinMode(BOTAO_L, INPUT);
-}
-
-int function lerBotao(void)
+u8bit lerBotao(void)
 {
   if(digitalRead(BOTAO_W) != HIGH) return  3;
   if(digitalRead(BOTAO_A) != HIGH) return  5;
@@ -49,7 +33,7 @@ int function lerBotao(void)
   if(digitalRead(BOTAO_L) != HIGH) return  6;
 }
 
-void girarMotor(int faixa)
+void girarMotor(u8bit faixa)
 {
   switch(faixa)
   {
@@ -105,7 +89,25 @@ void girarMotor(int faixa)
   }
 }
 
-void loop(void)
+void setup()
+{
+  pinMode(MOTOR_NO, OUTPUT);
+  pinMode(MOTOR_NE, OUTPUT);
+  pinMode(MOTOR_SO, OUTPUT);
+  pinMode(MOTOR_SE, OUTPUT);
+
+  pinMode(BOTAO_W, INPUT);
+  pinMode(BOTAO_A, INPUT);
+  pinMode(BOTAO_S, INPUT);
+  pinMode(BOTAO_D, INPUT);
+
+  pinMode(BOTAO_I, INPUT);
+  pinMode(BOTAO_J, INPUT);
+  pinMode(BOTAO_K, INPUT);
+  pinMode(BOTAO_L, INPUT);
+}
+
+void loop()
 {
   girarMotor(lerBotao());
 
