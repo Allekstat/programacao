@@ -1,4 +1,4 @@
-ALGORITMO OPERAÇÃO - 24.4
+ALGORITMO SOMA
 Alexsander;
 
 DECLARAÇÃO   :

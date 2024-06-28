@@ -1,0 +1,36 @@
+
+html {
+	height: 100%;
+	font-family: math;
+}
+
+body {
+	height: 100%;
+	margin: 0px;
+	border: 1px solid black;
+
+	box-sizing: border-box;
+}
+
+#caixa-maior {
+	background-color: rgb(0 0 0 /50%);
+
+	padding: 8px;
+}
+
+#entrada-x {
+	background-color: rgb(255 0 0 /30%);
+
+	padding: 4px;
+}
+
+#entrada-y {
+	background-color: rgb(0 0 255 /30%);
+
+	padding: 4px;
+}
+#saida {
+	background-color: rgb(0 255 0 /30%);
+
+	padding: 4px;
+}
